@@ -1,5 +1,9 @@
 return {
 
+  { "mbbill/undotree", keys = {
+    { "<leader>uu", vim.cmd.UndotreeToggle, desc = "Toggle undotree" },
+  } },
+
   { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
   {
     "goolord/alpha-nvim",

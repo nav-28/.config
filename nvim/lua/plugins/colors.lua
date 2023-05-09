@@ -14,7 +14,6 @@ return {
       },
 
       highlight_groups = {
-        StatusLine = { fg = "none", bg = "none" },
         TelescopeBorder = { fg = "none", bg = "none" },
         TelescopeNormal = { bg = "none" },
         TelescopePromptNormal = { bg = "none" },

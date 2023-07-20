@@ -4,13 +4,21 @@ return {
     name = "rose-pine",
     opts = {
       variant = "moon",
-      disable_background = true,
       disable_float_background = true,
-      dim_nc_background = true,
-
       groups = {
         background = "none",
-        background_nc = "none",
+        panel = "surface",
+        panel_nc = "base",
+        border = "highlight_med",
+        comment = "muted",
+        link = "iris",
+        punctuation = "subtle",
+
+        error = "love",
+        hint = "iris",
+        info = "foam",
+        warn = "gold",
+        headings = "subtle",
       },
 
       highlight_groups = {

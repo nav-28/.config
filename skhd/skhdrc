@@ -12,3 +12,6 @@ alt - r : yabai -m space --rotate 90
 
 # mirror y-axis
 alt - y : yabai -m space --mirror y-axis
+
+# open emacs
+alt - e : /Users/nav/.config/emacs/bin/ec

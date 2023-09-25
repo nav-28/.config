@@ -36,3 +36,4 @@ yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Notes$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^Android File Transfer$" manage=off
+yabai -m rule --add app="^Installer$" manage=off

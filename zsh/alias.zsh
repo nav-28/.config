@@ -10,12 +10,18 @@ alias em="emacsclient --create-frame $argv &"
 
 alias lilarun="bloop run lila -m lila.app.Lila -c ~/projects/lila/.bloop"
 alias tkill="tmux kill-server"
+alias restartemacs="brew services restart emacs-plus@28"
+
+# antlr4
+alias antlr4="java -Xmx500M org.antlr.v4.Tool"
+alias grun="java org.antlr.v4.gui.TestRig"
 
 # android emulators
 alias runemulator="/Users/nav/Library/Android/sdk/emulator/emulator -avd Nexus_Aspect"
 alias runemulator2="/Users/nav/Library/Android/sdk/emulator/emulator -avd Pixel_6"
 
 # flutter
+alias fdev="flutter run --dart-define=LICHESS_HOST=http://lichess.dev --dart-define=LICHESS_WS_HOST=wss://socket.lichess.dev"
 alias fget="flutter pub get && dart run build_runner build"
 alias fwatch="dart run build_runner watch"
 alias fbuild="dart run build_runner build"

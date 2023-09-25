@@ -26,3 +26,30 @@ compinit
 # End of lines added by compinstall
 
 [ -f "/Users/nav/.ghcup/env" ] && source "/Users/nav/.ghcup/env" # ghcup-env
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/nav/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/nav/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/nav/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/nav/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+if [[ "$TERM" == "dumb" ]]
+then
+  unsetopt zle
+  unsetopt prompt_cr
+  unsetopt prompt_subst
+  unfunction precmd
+  unfunction preexec
+  PS1='$ '
+fi
+

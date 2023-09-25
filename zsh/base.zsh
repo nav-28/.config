@@ -2,8 +2,17 @@
 # needed for emacs lsp config
 export LSP_USE_PLISTS=true
 
+# antlr
+export ANTLR_INS="$HOME/antlr/antlr4-install"
+export ANTLR_JAR="$HOME/antlr/antlr4-install/bin/antl4-4.13.0-complete.jar"
+export CLASSPATH="$ANTLR_JAR:$CLASSPATH"
 
+# mlir
+export MLIR_INS="$HOME/llvm-project/build/"
+export MLIR_DIR="$MLIR_INS/lib/cmake/mlir/" # Don't change me. 
+export PATH="$MLIR_INS/bin:$PATH" # Don't change me
 
+export PATH="$PATH:$HOME/Tester/bin/"
 
 export PATH="$PATH:/Users/nav/.config/scripts"
 

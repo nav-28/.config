@@ -5,6 +5,16 @@ return {
   } },
 
   { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+    keys = {
+      { "<C-h>", vim.cmd.TmuxNavigateLeft, "window left" },
+      { "<C-l>", vim.cmd.TmuxNavigateRight, "window right" },
+      { "<C-k>", "<cmd> TmuxNavigateUp<CR>", "window up" },
+      { "<C-j>", "<cmd> TmuxNavigateDown<CR>", "window down" },
+    },
+  },
 
   { "tpope/vim-surround" },
   {

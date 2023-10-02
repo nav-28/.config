@@ -8,12 +8,14 @@ return {
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
-    keys = {
-      { "<C-h>", vim.cmd.TmuxNavigateLeft, "window left" },
-      { "<C-l>", vim.cmd.TmuxNavigateRight, "window right" },
-      { "<C-k>", "<cmd> TmuxNavigateUp<CR>", "window up" },
-      { "<C-j>", "<cmd> TmuxNavigateDown<CR>", "window down" },
-    },
+    keys = function()
+      return {
+        { "<leader>th", "<cmd>TmuxNavigateLeft<CR>", desc = "window left" },
+        { "<leader>tj", "<cmd>TmuxNavigateRight<CR>", desc = "window right" },
+        { "<leader>tk", "<cmd>TmuxNavigateUp<CR>", desc = "window up" },
+        { "<leader>tl", "<cmd>TmuxNavigateDown<CR>", desc = "window down" },
+      }
+    end,
   },
 
   { "tpope/vim-surround" },

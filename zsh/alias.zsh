@@ -21,12 +21,15 @@ alias runemulator="/Users/nav/Library/Android/sdk/emulator/emulator -avd Nexus_A
 alias runemulator2="/Users/nav/Library/Android/sdk/emulator/emulator -avd Pixel_6"
 
 # flutter
-alias fdev="flutter run --dart-define=LICHESS_HOST=http://lichess.dev --dart-define=LICHESS_WS_HOST=wss://socket.lichess.dev"
+alias fdev="flutter run --dart-define=LICHESS_HOST=https://lichess.dev --dart-define=LICHESS_WS_HOST=wss://socket.lichess.dev"
 alias fget="flutter pub get && dart run build_runner build"
 alias fwatch="dart run build_runner watch"
 alias fbuild="dart run build_runner build"
 alias fcheck="flutter analyze && dart run custom_lint && dart run dart_code_metrics:metrics analyze lib --no-fatal-style"
 alias dartcheck="dart run dart_code_metrics:metrics analyze lib --no-fatal-style"
+alias fv=".fvm/flutter_sdk/bin/flutter" # fvm flutter
+alias flutter="/Users/nav/fvm/default/bin/flutter"
+
 # github alias
 alias gpl="git pull"
 alias gc="git commit"
@@ -36,4 +39,7 @@ alias gs="git status"
 alias gr="git reset"
 alias gk="git checkout"
 
+
+# work
+alias agntup="git checkout main && git pull upstream main && git log"
 

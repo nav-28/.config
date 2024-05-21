@@ -2,6 +2,11 @@
 # needed for emacs lsp config
 export LSP_USE_PLISTS=true
 
+export LDFLAGS="-L/usr/local/opt/llvm/lib/c++ -Wl,-rpath,/usr/local/opt/llvm/lib/c++"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib:$LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
 # antlr
 export ANTLR_INS="$HOME/antlr/antlr4-install"
 export ANTLR_JAR="$HOME/antlr/antlr4-install/bin/antl4-4.13.0-complete.jar"
@@ -15,6 +20,7 @@ export PATH="$MLIR_INS/bin:$PATH" # Don't change me
 export PATH="$PATH:$HOME/Tester/bin/"
 
 export PATH="$PATH:/Users/nav/.config/scripts"
+export PATH="$PATH:/Users/nav/fvm/default/bin"
 
 # Android
 export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator"

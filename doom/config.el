@@ -2,7 +2,7 @@
       user-mail-address "pwadhwa@ualberta.ca")
 
 ;;; make emacs transparent
-(defvar window-transparency 85
+(defvar window-transparency 95
   "The transparency level for the Emacs frame.")
 (set-frame-parameter (selected-frame) 'alpha `(,window-transparency . ,window-transparency))
 (add-to-list 'default-frame-alist `(alpha . (,window-transparency . ,window-transparency)))
@@ -17,6 +17,15 @@
 (setq org-directory "~/org/")
 
 (setq display-line-numbers-type 'relative)
+
+;; Set the path to the LLDB executable
+(setq-default gdb-many-windows t)
+(setq gdb-show-main t)
+
+(when (eq system-type 'darwin) ; Only for macOS
+  (setq gdb-command-name "lldb"))
+
+(require 'dap-gdb-lldb)
 
 
 (setq explicit-shell-file-name "/bin/zsh")
@@ -41,6 +50,8 @@
   (add-hook 'evil-insert-state-exit-hook  'lsp-diagnostics--enable)
   (setq lsp-log-io nil
         lsp-keep-workspace-alive nil
+        lsp-enable-on-type-formatting nil
+        lsp-enable-indentation nil
         lsp-signature-render-documentation nil
         lsp-signature-function 'lsp-signature-posframe
         lsp-semantic-tokens-enable t
@@ -63,6 +74,28 @@
 Ver https://github.com/emacs-lsp/lsp-dart/issues/61#issuecomment-692392701"
     (setq-local doom-modeline-major-mode-icon nil)))
 
+
+(after! lsp-clangd
+  (setq lsp-clients-clangd-args
+        '("-j=3"
+          "--background-index"
+          "--clang-tidy"
+          "--completion-style=detailed"
+          "--header-insertion=never"
+          "--header-insertion-decorators=0"))
+  (setq lsp-enable-on-type-formatting nil)
+  (setq lsp-enable-indentation nil)
+  (set-lsp-priority! 'clangd 2))
+
+;; (defun my-clang-format-on-save ()
+;;   "Print the project root and call clang-format on the current buffer before saving."
+;;   (when (and (eq major-mode 'c++-mode) ; Add more modes if needed
+;;              (projectile-project-p))
+;;     (let ((project-root (projectile-project-root)))
+;;       (shell-command (format "clang-format -i %s" (buffer-file-name)) nil project-root))))
+
+
+;; (add-hook 'after-save-hook 'my-clang-format-on-save)
 
 ;; associate .g4 files with antlr
 (add-to-list 'auto-mode-alist '("\\.g4\\'" . antlr-mode))
@@ -104,4 +137,3 @@ Ver https://github.com/emacs-lsp/lsp-dart/issues/61#issuecomment-692392701"
              (kill-buffer orig)
              (dired up)
              (dired-goto-file dir))))))
-                             file))))

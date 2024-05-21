@@ -14,6 +14,17 @@ return {
         cssls = {},
         rust_analyzer = {},
         pyright = {},
+        dartls = {},
+      },
+    },
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "clangd",
+        "clang-format",
+        "codelldb",
       },
     },
   },
